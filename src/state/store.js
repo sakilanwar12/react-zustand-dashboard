@@ -1,34 +1,30 @@
 import { create } from 'zustand'
 
-const useStore = create((set) => ({
+const initialState = {
     toggleSettings: false,
     nav: 'static',
     footer: 'static-footer',
     sidebarToggle: false,
-    contentWidth: "container-box",
+    contentWidth: "container-box"
+}
+
+const useStore = create((set) => ({
+    ...initialState,
+
+    // toggle Settings
     setToggleSettings: () => set((state) => ({ toggleSettings: !state.toggleSettings })),
 
     // navbar
-
-    setNavSticky: () => set(() => ({ nav: "sticky-menu" })),
-    setNavStatic: () => set(() => ({ nav: "static-menu" })),
-    setNavHidden: () => set(() => ({ nav: "hidden-menu" })),
+    setNav: (navStyle) => set(() => ({ nav: navStyle })),
 
     // footer
-
-    setFooterSticky: () => set(() => ({ footer: "sticky-footer" })),
-    setFooterStatic: () => set(() => ({ footer: "static-footer" })),
-    setFooterHidden: () => set(() => ({ footer: "hidden-footer" })),
-
+    setFooter: (footerStyle) => set(() => ({ footer: footerStyle })),
     // sidebar
-
     setSidebarToggle: () => set((state) => ({ sidebarToggle: !state.sidebarToggle })),
 
     // content width
-
-    setFullContentWidth: () => set(() => ({ contentWidth: "container-full" })),
-    setBoxContentWidth: () => set(() => ({ contentWidth: "container-box" }))
-
+    setContainer: (container) => set(() => ({ contentWidth: container }))
+ 
 }))
 
 export default useStore;

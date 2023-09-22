@@ -7,15 +7,7 @@ import Footer from "../partials/common/Footer";
 
 
 const Main = () => {
-    const toggleSettings = useStore(state => state.toggleSettings);
-    const setToggleSettings = useStore(state => state.setToggleSettings);
-    const sidebarToggle = useStore(state => state.sidebarToggle);
-
-    const footer = useStore(state => state.footer);
-
-    // content width
-
-    const contentWidth = useStore(state => state.contentWidth);
+    const {toggleSettings,setToggleSettings,sidebarToggle,footer,contentWidth} = useStore();
 
     let container = "";
     if (contentWidth === "container-full" && !sidebarToggle) {
@@ -25,7 +17,7 @@ const Main = () => {
     } else {
         container = contentWidth
     }
-
+console.log(contentWidth)
     return (
         <div className=" bg-[#f1f5f9] dark:bg-black min-h-screen relative">
             <Header />

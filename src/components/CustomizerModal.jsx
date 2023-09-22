@@ -3,28 +3,8 @@ import useStore from "../state/store";
 
 
 const CustomizerModal = () => {
-
-    // toggle settings
-    const setToggleSettings = useStore(state => state.setToggleSettings);
-
-    // navbar
-
-    const setNavSticky = useStore(state => state.setNavSticky);
-    const setNavStatic = useStore(state => state.setNavStatic);
-    const setNavHidden = useStore(state => state.setNavHidden);
-
-    // footer
-    const setFooterSticky = useStore(state => state.setFooterSticky);
-    const setFooterStatic = useStore(state => state.setFooterStatic);
-    const setFooterHidden = useStore(state => state.setFooterHidden);
-
-    // sidebar toggle
-
-    const setSidebarToggle = useStore(state => state.setSidebarToggle);
-
-    // content width
-    const setFullContentWidth = useStore(state => state.setFullContentWidth);
-    const setBoxContentWidth = useStore(state => state.setBoxContentWidth);
+    
+const {setToggleSettings,setNav,setFooter,setContainer,setSidebarToggle} = useStore();
 
     return (
         <div className="w-[300px] bg-white shadow-2xl px-4 py-20  min-h-screen absolute z-50 top-0 right-0">
@@ -45,14 +25,14 @@ const CustomizerModal = () => {
             <div className="flex space-x-4 items-center">
                 <div>
                     <label htmlFor="fullWidth">
-                        <input type="radio" name="content-width" id="fullWidth" onChange={setFullContentWidth} />
+                        <input type="radio" name="content-width" id="fullWidth" onChange={()=>setContainer("container-full")} />
                         <span>Full Width</span>
                     </label>
                 </div>
 
                 <div>
                     <label htmlFor="BoxContentWidth">
-                        <input type="radio" name="content-width" id="BoxContentWidth" onChange={setBoxContentWidth} />
+                        <input type="radio" name="content-width" id="BoxContentWidth" onChange={()=>setContainer("container-box")} />
                         <span>Box Width</span>
                     </label>
                 </div>
@@ -87,19 +67,19 @@ const CustomizerModal = () => {
             <div className="grid grid-cols-4 mt-2">
                 <div>
                     <label htmlFor="stickyNav">
-                        <input type="radio" id="stickyNav" name="nav" onChange={setNavSticky} />
+                        <input type="radio" id="stickyNav" name="nav" onChange={()=>setNav("sticky-menu")} />
                         <span>Sticky</span>
                     </label>
                 </div>
                 <div>
                     <label htmlFor="staticNav">
-                        <input type="radio" id="staticNav" name="nav" onChange={setNavStatic} />
+                        <input type="radio" id="staticNav" name="nav" onChange={()=>setNav("static-menu")} />
                         <span>Static</span>
                     </label>
                 </div>
                 <div>
                     <label htmlFor="hiddenNav">
-                        <input type="radio" id="hiddenNav" name="nav" onChange={setNavHidden} />
+                        <input type="radio" id="hiddenNav" name="nav" onChange={()=>setNav("hidden-menu")} />
                         <span>Hidden</span>
                     </label>
                 </div>
@@ -111,19 +91,19 @@ const CustomizerModal = () => {
             <div className="grid grid-cols-4 mt-2">
                 <div>
                     <label htmlFor="stickyFooter">
-                        <input type="radio" id="stickyFooter" name="footer" onChange={setFooterSticky} />
+                        <input type="radio" id="stickyFooter" name="footer" onChange={()=>setFooter("sticky-footer")} />
                         <span>Sticky</span>
                     </label>
                 </div>
                 <div>
                     <label htmlFor="staticFooter">
-                        <input type="radio" id="staticFooter" name="footer" onChange={setFooterStatic} />
+                        <input type="radio" id="staticFooter" name="footer" onChange={()=>setFooter("static-footer")} />
                         <span>Static</span>
                     </label>
                 </div>
                 <div>
                     <label htmlFor="hiddenFooter">
-                        <input type="radio" id="hiddenFooter" name="footer" onChange={setFooterHidden} />
+                        <input type="radio" id="hiddenFooter" name="footer" onChange={()=>setFooter("hidden-footer")} />
                         <span>Hidden</span>
                     </label>
                 </div>
