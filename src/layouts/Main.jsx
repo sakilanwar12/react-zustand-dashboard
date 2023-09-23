@@ -3,9 +3,9 @@ import Header from "../partials/common/Header";
 import Sidebar from "../partials/common/Sidebar";
 import CustomizerModal from "../components/CustomizerModal";
 import Footer from "../partials/common/Footer";
-import { setToggleSettings } from "../state/actions";
+import { setToggleSettings } from "../state/ThemeActions";
 import useStore from "../state/store";
-
+import { FaGear } from "react-icons/fa6";
 
 const Main = () => {
 
@@ -17,20 +17,26 @@ const Main = () => {
     } else if (contentWidth === "container-full" && sidebarToggle) {
         container = "container-full"
     } else {
-        container = contentWidth
+        container = contentWidth;
     }
-    console.log(contentWidth)
+
+
+
     return (
-        <div className=" bg-[#f1f5f9] dark:bg-black min-h-screen relative">
+        <div className=" bg-[#f1f5f9] dark:bg-[#0e172a] min-h-screen relative">
             <Header />
             {!sidebarToggle && <Sidebar />}
 
             {toggleSettings ? <CustomizerModal /> : ""}
             <div className={container}>
                 <div className="settings-btn">
-                    <button type="button" className="fixed top-1/2 right-10 bg-black text-white py-1 px-5 rounded-sm capitalize"
-                        onClick={setToggleSettings}>settings</button>
+                    <button type="button" className="fixed top-1/2 right-0 rotate-90 bg-black flex items-center space-x-2 text-white py-1 px-3 rounded-md capitalize"
+                        onClick={setToggleSettings}>
+                        <FaGear className="animate-spin" />
+                        <span className="text-sm"> settings</span>
+                    </button>
                 </div>
+
 
                 <Outlet></Outlet>
 

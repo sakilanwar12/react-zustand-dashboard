@@ -1,31 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-    .container-box{
+@layer base {
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+}
+
+@layer components {
+    .container-box {
         @apply w-[1200px] mx-auto;
     }
-    .container-full{
+
+    .container-full {
         @apply w-full pl-5 pr-5;
     }
-    .container-full.sidebar-open{
+
+    .container-full.sidebar-open {
         padding-left: 300px
     }
 
-    .sticky-menu{
-        @apply  sticky top-0 z-10;
+    .sticky-menu {
+        @apply sticky top-0 z-10;
     }
-    .static-menu{
+
+    .static-menu {
         @apply static;
     }
-    .hidden-menu{
+
+    .hidden-menu {
         @apply hidden;
     }
-    .static-footer{
+
+    .static-footer {
         @apply static;
     }
-    .sticky-footer{
+
+    .sticky-footer {
         @apply sticky bottom-0 z-10;
+    }
+
+    .skin_bordered .border-item{
+        @apply border border-gray-400 dark:border-white;
     }
 }

@@ -17,3 +17,12 @@ export const setSidebarToggle = () => {
 export const setContainer = (container) => {
     useStore.setState(() => ({ contentWidth: container }))
 }
+export const setTheme = (theme) => {
+    useStore.setState(() => ({ theme: theme }))
+}
+export const setSemiDark = () => {
+    useStore.setState(state => ({ semi_dark: !state.semi_dark }))
+}
+export const setSkin = (skin) => {
+    useStore.setState(() => ({ skin_bordered: skin }))
+}
