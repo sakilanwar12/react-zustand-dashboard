@@ -1,7 +1,7 @@
 import useStore from "./store"
 
-export const setToggleSettings = () => {
-    useStore.setState(state => ({ toggleSettings: !state.toggleSettings }))
+export const setOpenSettings = () => {
+    useStore.setState(state => ({ settingsOpen: !state.settingsOpen }))
 }
 
 export const setNav = (navStyle) => {
@@ -11,8 +11,8 @@ export const setNav = (navStyle) => {
 export const setFooter = (footerStyle) => {
     useStore.setState(() => ({ footer: footerStyle }))
 }
-export const setSidebarToggle = () => {
-    useStore.setState(state => ({ sidebarToggle: !state.sidebarToggle }))
+export const setSidebarOpen = () => {
+    useStore.setState(state => ({ isSidebarOpen: !state.isSidebarOpen }))
 }
 export const setContainer = (container) => {
     useStore.setState(() => ({ contentWidth: container }))

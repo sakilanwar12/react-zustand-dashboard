@@ -3,47 +3,47 @@ import Header from "../partials/common/Header";
 import Sidebar from "../partials/common/Sidebar";
 import CustomizerModal from "../components/CustomizerModal";
 import Footer from "../partials/common/Footer";
-import { setToggleSettings } from "../state/ThemeActions";
+
 import useStore from "../state/store";
 import { FaGear } from "react-icons/fa6";
+import { setOpenSettings } from "../state/ThemeActions";
+import clsx from "clsx";
 
 const Main = () => {
 
-    const { toggleSettings, sidebarToggle, footer, contentWidth } = useStore();
+    const { settingsOpen, isSidebarOpen, footer, contentWidth } = useStore();
 
-    let container = "";
-    if (contentWidth === "container-full" && !sidebarToggle) {
-        container = "container-full sidebar-open"
-    } else if (contentWidth === "container-full" && sidebarToggle) {
-        container = "container-full"
-    } else {
-        container = contentWidth;
-    }
-
+    const container = clsx({
+        'w-full pl-5 pr-5': contentWidth === 'container-full' && !isSidebarOpen,
+        'w-full pl-5 pr-5 pl-[220px]': contentWidth === 'container-full' && isSidebarOpen,
+        [contentWidth]: contentWidth !== 'container-full',
+      });
 
 
     return (
-        <div className=" bg-[#f1f5f9] dark:bg-[#0e172a] min-h-screen relative">
+        <>
             <Header />
-            {!sidebarToggle && <Sidebar />}
+            <div className={`bg-[#f1f5f9] dark:bg-[#0e172a] min-h-screen relative ${isSidebarOpen ? "pl-[100px]" : ""}`}>
 
-            {toggleSettings ? <CustomizerModal /> : ""}
-            <div className={container}>
-                <div className="settings-btn">
-                    <button type="button" className="fixed top-1/2 right-0 rotate-90 bg-black flex items-center space-x-2 text-white py-1 px-3 rounded-md capitalize"
-                        onClick={setToggleSettings}>
-                        <FaGear className="animate-spin" />
-                        <span className="text-sm"> settings</span>
-                    </button>
+                {isSidebarOpen && <Sidebar />}
+
+                {settingsOpen ? <CustomizerModal /> : ""}
+
+                <div className={container}>
+                    <div className="settings-btn">
+                        <button type="button" className="fixed top-1/2 right-0 rotate-90 bg-black flex items-center space-x-2 text-white py-1 px-3 rounded-md capitalize"
+                            onClick={setOpenSettings} >
+                            <FaGear className="animate-spin" />
+                            <span className="text-sm"> settings</span>
+                        </button>
+                    </div>
+
+                    <Outlet></Outlet>
                 </div>
-
-
-                <Outlet></Outlet>
-
-                {footer !== "hidden-footer" && <Footer />}
-
             </div>
-        </div>
+
+            {footer !== "hidden" && <Footer />}
+        </>
     );
 };
 

@@ -5,10 +5,15 @@ const Footer = () => {
     const footer = useStore(state => state.footer);
 
     return (
-        <div className={`text-center absolute left-0 w-full bottom-0 pb-5 shadow-md bg-slate-300 dark:bg-[#0e172a] dark:text-white py-2 border-item ${footer}`}>
-            <h2>Footer</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-        </div>
+        <footer className={`ltr:ml-[248px] rtl:mr-[248px]  ${footer}`}>
+            <div className="site-footer px-6 bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-300 py-4">
+                <div className="grid md:grid-cols-2 grid-cols-1 md:gap-5">
+                    <div className="text-center ltr:md:text-start rtl:md:text-right text-sm">
+                        COPYRIGHT © 2022 DashCode, All rights Reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
     );
 };
 

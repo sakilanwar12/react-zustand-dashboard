@@ -25,9 +25,10 @@ function App() {
   ])
 
 
+
   return (
     <>
-      <div className={`${theme} ${skin_bordered} ${grayscale ? "grayscale" : ""} `}>
+      <div className={` ${theme} ${skin_bordered} ${grayscale ? "grayscale" : ""} `}>
         <RouterProvider router={router} />
       </div>
 

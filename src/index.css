@@ -11,37 +11,6 @@
 }
 
 @layer components {
-    .container-box {
-        @apply w-[1200px] mx-auto;
-    }
-
-    .container-full {
-        @apply w-full pl-5 pr-5;
-    }
-
-    .container-full.sidebar-open {
-        padding-left: 300px
-    }
-
-    .sticky-menu {
-        @apply sticky top-0 z-10;
-    }
-
-    .static-menu {
-        @apply static;
-    }
-
-    .hidden-menu {
-        @apply hidden;
-    }
-
-    .static-footer {
-        @apply static;
-    }
-
-    .sticky-footer {
-        @apply sticky bottom-0 z-10;
-    }
 
     .skin_bordered .border-item{
         @apply border border-gray-400 dark:border-white;
