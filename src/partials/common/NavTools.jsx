@@ -6,7 +6,6 @@ import author from "./../../assets/images/author.png";
 import flag from "./../../assets/images/flag.png";
 import { setGrayScale, setTheme } from "../../state/ThemeActions";
 import useStore from "../../state/store";
-import ShoppingCart from "../../components/ShoppingCart";
 const NavTools = () => {
     const { theme } = useStore();
     return (
@@ -28,7 +27,7 @@ const NavTools = () => {
             <div className="h-10 w-10 inline-flex justify-center items-center text-lg dark:bg-slate-900 rounded-full bg-slate-100 relative">
                 <HiShoppingCart />
                 <span className="absolute -top-2 -right-1 w-5 h-5 rounded-full bg-red-500 flex justify-center items-center text-xs font-bold text-white">0</span>
-                <ShoppingCart />
+                {/* <ShoppingCart /> */}
 
             </div>
             <div className="h-10 w-10 inline-flex justify-center items-center text-lg dark:bg-slate-900 rounded-full bg-slate-100 relative">
