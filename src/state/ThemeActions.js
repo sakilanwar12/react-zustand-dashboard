@@ -26,3 +26,6 @@ export const setSemiDark = () => {
 export const setSkin = (skin) => {
     useStore.setState(() => ({ skin_bordered: skin }))
 }
+export const setGrayScale = () => {
+    useStore.setState(state => ({ grayscale: !state.grayscale }))
+}

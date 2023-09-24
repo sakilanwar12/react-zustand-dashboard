@@ -6,7 +6,7 @@ import Demo from './partials/Demo'
 import useStore from './state/store'
 
 function App() {
-  const { theme, skin_bordered } = useStore();
+  const { theme, skin_bordered, grayscale } = useStore();
   const router = createBrowserRouter([
     {
       path: "/",
@@ -24,9 +24,10 @@ function App() {
     }
   ])
 
+
   return (
     <>
-      <div className={`${theme} ${skin_bordered}`}>
+      <div className={`${theme} ${skin_bordered} ${grayscale ? "grayscale" : ""} `}>
         <RouterProvider router={router} />
       </div>
 

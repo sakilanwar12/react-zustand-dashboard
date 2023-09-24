@@ -6,6 +6,7 @@ const initialState = {
     nav: 'static',
     theme: "light",
     semi_dark: false,
+    grayscale:false,
     footer: 'static-footer',
     sidebarToggle: false,
     contentWidth: "container-box",

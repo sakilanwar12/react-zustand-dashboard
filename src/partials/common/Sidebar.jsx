@@ -4,7 +4,7 @@ import useStore from "../../state/store";
 const Sidebar = () => {
     const {semi_dark} = useStore();
     return (
-        <div className={`w-[300px] min-h-screen  border-item shadow-xl px-5 pt-5 absolute z-20 top-0 left-0 ${semi_dark?"bg-[#475569]":"bg-white"}`}>
+        <div className={`w-[300px] dark:bg-[#0d1629] dark:text-[#eee] min-h-screen  border-item shadow-xl px-5 pt-5 absolute z-20 top-0 left-0 ${semi_dark?"bg-[#475569]":"bg-white"}`}>
             <div className="logo-area pt-20">
                 <p className="">Logo</p>
                 
