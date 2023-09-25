@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Main from './layouts/Main'
 import Demo from './partials/Demo'
 import useStore from './state/store'
+import BasicTable from './components/Table/BasicTable'
 
 function App() {
   const { theme, skin_bordered, grayscale } = useStore();
@@ -19,6 +20,10 @@ function App() {
         {
           path: "/demo",
           element: <Demo />
+        },
+        {
+          path: "/react_basic_table",
+          element: <BasicTable />
         },
       ]
     }

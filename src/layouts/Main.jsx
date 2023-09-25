@@ -38,7 +38,7 @@ const Main = () => {
                         </button>
                     </div>
 
-                    <Outlet></Outlet>
+                    <Outlet/>
                 </div>
             </div>
 
