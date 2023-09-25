@@ -19,11 +19,14 @@ const SubMenu = ({ label, submenu }) => {
     };
 
     return (
-        <li >
+        <li className="transition-all duration-300">
             <div
                 className="rounded-md flex justify-between items-center px-2 mb-2 " onClick={toggleSubMenu}>
                 <span className="font-medium capitalize "> {label}</span>
-                <span className="h-8 w-8  rounded-full border flex justify-center items-center hover:border-black hover:bg-black hover:text-white"><HiOutlineChevronRight /></span>
+                <span 
+                className="h-8 w-8  rounded-full border flex justify-center items-center hover:border-black hover:bg-black hover:text-white"
+                
+                ><HiOutlineChevronRight className={`${isOpen?"rotate-90":""}`} /></span>
             </div>
             {isOpen &&
                 <ul>

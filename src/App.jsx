@@ -2,9 +2,10 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home'
 import Main from './layouts/Main'
-import Demo from './partials/Demo'
 import useStore from './state/store'
-import BasicTable from './components/Table/BasicTable'
+import Analytics from './partials/Dashboard/Analytics';
+import Ecommerce from './partials/Dashboard/Ecommerce';
+
 
 function App() {
   const { theme, skin_bordered, grayscale } = useStore();
@@ -18,12 +19,12 @@ function App() {
           element: <Home />
         },
         {
-          path: "/demo",
-          element: <Demo />
+          path: "dashboard/analytics-dashboard",
+          element: <Analytics />
         },
         {
-          path: "/react_basic_table",
-          element: <BasicTable />
+          path: "dashboard/ecommerce-dashboard",
+          element: <Ecommerce />
         },
       ]
     }
