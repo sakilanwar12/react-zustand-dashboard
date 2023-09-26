@@ -22,7 +22,7 @@ const NavTools = () => {
     return (
         <div className="flex items-center space-x-8">
 
-
+            {/* Language sub menu */}
             <div className="relative">
                 <button
                     className="relative w-full flex items-center cursor-pointer "
@@ -84,13 +84,19 @@ const NavTools = () => {
                 }
             </div>
 
+            {/* Theme  */}
+
             <span className="h-10 w-10 inline-flex cursor-pointer justify-center items-center text-lg dark:bg-slate-900 rounded-full bg-slate-100">
                 {theme === "light" ? <HiMoon onClick={() => setTheme("dark")} /> : <FaSun onClick={() => setTheme("light")} />}
             </span>
 
+            {/* Grayscale */}
+
             <span className="h-10 w-10 cursor-pointer inline-flex justify-center items-center text-lg dark:bg-slate-900 rounded-full bg-slate-100">
                 <VscSymbolColor onClick={setGrayScale} />
             </span>
+
+            {/* Shopping Cart  */}
 
             <div className="relative"
             >
@@ -101,6 +107,10 @@ const NavTools = () => {
                 <span className="absolute -top-2 -right-1 w-5 h-5 rounded-full bg-red-500 flex justify-center items-center text-xs font-bold text-white">0</span>
                 {shoppingCart && <Cart price={200} subtotal={220} />}
             </div>
+
+            {/* Message Box */}
+
+
             <div className="relative">
                 <span className="h-10 w-10 cursor-pointer inline-flex justify-center items-center text-lg dark:bg-slate-900 rounded-full bg-slate-100" onClick={setOpenInbox}>
                     <HiMail />
@@ -109,6 +119,10 @@ const NavTools = () => {
                 <span className="absolute -top-2 -right-1 w-5 h-5 rounded-full bg-red-500 flex justify-center items-center text-xs font-bold text-white">5</span>
                 {openInbox && <Inbox message_data={message_data} />}
             </div>
+
+            {/* Notificatin Box */}
+
+
             <div className="relative">
                 <span className="h-10 w-10 cursor-pointer inline-flex justify-center items-center text-lg
                  dark:bg-slate-900 rounded-full bg-slate-100" onClick={setOpenNotificationsBox}>
@@ -121,6 +135,9 @@ const NavTools = () => {
                 flex justify-center items-center text-xs font-bold text-white">10</span>
             </div>
 
+            {/* Author Menu */}
+
+            
             <div className="cursor-pointer relative">
                 <div className="flex items-center" onClick={setOpenAuthorMenu}>
                     <div className="mr-2">

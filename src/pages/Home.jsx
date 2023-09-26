@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div className="p-5 " >
             <h2 className="mb-4">Ecommerce App</h2>
-            <div className="grid grid-cols-4 gap-5">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
 
                 {data.map(item => (
                     <div className="bg-white border-item rounded-sm p-10" key={item._id}>
