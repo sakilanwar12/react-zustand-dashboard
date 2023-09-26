@@ -29,3 +29,15 @@ export const setSkin = (skin) => {
 export const setGrayScale = () => {
     useStore.setState(state => ({ grayscale: !state.grayscale }))
 }
+export const setShoppingCart = () => {
+    useStore.setState(state => ({ shoppingCart: !state.shoppingCart }))
+}
+export const setOpenInbox = () => {
+    useStore.setState(state => ({ openInbox: !state.openInbox }))
+}
+export const setOpenNotificationsBox = () => {
+    useStore.setState(state => ({ openNotification: !state.openNotification }))
+}
+export const setOpenAuthorMenu = () => {
+    useStore.setState(state => ({ openAuthorMenu: !state.openAuthorMenu }))
+}

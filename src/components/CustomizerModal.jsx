@@ -5,8 +5,6 @@ import useStore from "../state/store";
 
 const CustomizerModal = () => {
 
-
-
     const { skin_bordered, theme, contentWidth, nav, footer, menuHidden } = useStore();
     return (
         <div className="w-[320px] bg-white text-[#222] dark:bg-[#0e172a]  shadow-3xl px-4 pt-4  min-h-screen absolute z-50 top-0 right-0">
@@ -136,8 +134,8 @@ const CustomizerModal = () => {
                     <div className="grid grid-cols-4 gap-1 mt-2">
                         <label htmlFor="stickyFooter">
                             <input type="radio" id="stickyFooter" name="footer"
-                                checked={footer === "sticky bottom-0 z-[999]"}
-                                onChange={() => setFooter("sticky bottom-0 z-[999]")}
+                                checked={footer === "sticky bottom-0 z-2"}
+                                onChange={() => setFooter("sticky bottom-0 z-2")}
                             />
                             <span className="text-slate-500 dark:text-slate-400 text-sm leading-6 ml-1">Sticky</span>
                         </label>
