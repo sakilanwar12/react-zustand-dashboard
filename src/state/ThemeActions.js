@@ -11,8 +11,8 @@ export const setNav = (navStyle) => {
 export const setFooter = (footerStyle) => {
     useStore.setState(() => ({ footer: footerStyle }))
 }
-export const setSidebarOpen = () => {
-    useStore.setState(state => ({ isSidebarOpen: !state.isSidebarOpen }))
+export const setMenuHidden = () => {
+    useStore.setState(state => ({ menuHidden: !state.menuHidden }))
 }
 export const setContainer = (container) => {
     useStore.setState(() => ({ contentWidth: container }))

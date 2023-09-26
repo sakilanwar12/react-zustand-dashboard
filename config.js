@@ -5,7 +5,7 @@ const config  = {
     semi_dark: false,
     grayscale:false,
     footer: 'sticky bottom-0 z-[999]',
-    isSidebarOpen: true,
+    menuHidden: false,
     contentWidth: "container",
     skin_bordered: "skin_default"
 }

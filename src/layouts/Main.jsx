@@ -11,11 +11,11 @@ import clsx from "clsx";
 
 const Main = () => {
 
-    const { settingsOpen, isSidebarOpen, footer, contentWidth } = useStore();
+    const { settingsOpen, menuHidden, footer, contentWidth } = useStore();
 
     const container = clsx({
-        'w-full pl-5 pr-5': contentWidth === 'container-full' && !isSidebarOpen,
-        'w-full pl-5 pr-5 pl-[220px]': contentWidth === 'container-full' && isSidebarOpen,
+        'w-full pl-5 pr-5': contentWidth === 'container-full' && menuHidden,
+        'w-full pl-5 pr-5 pl-[220px]': contentWidth === 'container-full' && !menuHidden,
         [contentWidth]: contentWidth !== 'container-full',
       });
 
@@ -23,9 +23,9 @@ const Main = () => {
     return (
         <>
             <Header />
-            <div className={`bg-[#f1f5f9] dark:bg-[#0e172a] min-h-screen relative ${isSidebarOpen ? "pl-[100px]" : ""}`}>
+            <div className={`bg-[#f1f5f9] dark:bg-[#0e172a] min-h-screen relative ${!menuHidden ? "pl-[100px]" : ""}`}>
 
-                {isSidebarOpen && <Sidebar />}
+                {!menuHidden && <Sidebar />}
 
                 {settingsOpen ? <CustomizerModal /> : ""}
 
